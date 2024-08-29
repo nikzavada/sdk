@@ -22,6 +22,7 @@ from .tap_tests import (
     TapDiscoveryTest,
     TapStreamConnectionTest,
     TapValidFinalStateTest,
+    TapVersionTest,
 )
 
 # TODO: add TargetMultipleStateMessages
@@ -42,6 +43,7 @@ from .target_tests import (
     TargetSchemaNoProperties,
     TargetSchemaUpdates,
     TargetSpecialCharsInAttributes,
+    TargetVersionTest,
 )
 from .templates import TestTemplate
 
@@ -60,6 +62,7 @@ class TestSuite(t.Generic[T]):
 tap_tests = TestSuite(
     kind="tap",
     tests=[
+        TapVersionTest,
         TapCLIPrintsTest,
         TapDiscoveryTest,
         TapStreamConnectionTest,
@@ -94,6 +97,7 @@ tap_stream_attribute_tests = TestSuite(
 target_tests = TestSuite(
     kind="target",
     tests=[
+        TargetVersionTest,
         TargetArrayData,
         TargetCamelcaseComplexSchema,
         TargetCamelcaseTest,

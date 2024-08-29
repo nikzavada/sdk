@@ -34,7 +34,7 @@ class TestTemplate:
         NotImplementedError: [description]
     """
 
-    name: str | None = None
+    name: str
     plugin_type: str | None = None
 
     @property
