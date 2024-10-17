@@ -152,7 +152,7 @@ class FolderTap(Tap, t.Generic[_T]):
                 msg,
                 errors=[f"Missing configuration for filesystem {protocol}"],
             )
-        logger.info("Instatiating filesystem inteface: '%s'", protocol)
+        logger.debug("Instantiating filesystem inteface: '%s'", protocol)
         return fsspec.filesystem(protocol, **self.config.get(protocol, {}))
 
     def discover_streams(self) -> list:
